@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require("./routes");
-const connectToDatabase = require('./database/connect');
+const {connectToDatabase, findById} = require('./database/connect');
 const app = express();
 const port = 3000;
 

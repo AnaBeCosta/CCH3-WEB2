@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Pessoa  = mongoose.Schema({
     nome: {
       type: String,
-      required: true
+      required: true,
+      unique: true
     },
     cpf: {
       type: String,

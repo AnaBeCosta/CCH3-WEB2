@@ -60,22 +60,7 @@ module.exports = {
       res.status(500).json({ error: 'Erro ao cadastrar pessoa.' });
     }
   },
-
-  /*
-  //LISTAR PESSOA/PRODUTO/VENDA
-  async getProcura(req, res){
-    try{
-      const { _id} = req.body;
-      
-      const pessoa = await Pessoa.findOne({_id: _id});
-      res.status(200).json({"data": {"status": "success", pessoa}});
-    }catch (error) {
-      console.log(error);
-      res.status(500).json({ error: 'Erro ao listar pessoa.' });
-    }
-  },
-  */
-
+  
   //LISTAR PESSOA
   async getPessoa (req, res){
     try{

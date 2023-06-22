@@ -6,11 +6,12 @@ module.exports = {
   //MENU
   async getMenu (req, res){
     try{
-      res.send('Exemplo de rota GET');
+      res.sendFile(path.join(__dirname, 'build', 'pages/menu/index.jsx'));
     }catch (error) {
       res.status(500).json({ error: 'Erro.' });
     }
   },
+
 
   //CADASTRAR PRODUTO
   async postProduto (req, res){

@@ -6,8 +6,9 @@ module.exports = {
   //MENU
   async getMenu (req, res){
     try{
-      res.sendFile(path.join(__dirname, 'build', 'pages/menu/index.jsx'));
+      res.sendFile(path.join(__dirname, 'build', './pages/menu/index.jsx'));
     }catch (error) {
+      console.log(error)
       res.status(500).json({ error: 'Erro.' });
     }
   },
@@ -42,7 +43,7 @@ module.exports = {
   async getProdutos (req, res){
     try{
       const produto = await Produto.find();
-      res.status(200).json({"data": {"status": "success", produto}});
+      res.status(200).json(produto);
     }catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Erro ao listar produtos.' });

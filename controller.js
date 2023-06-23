@@ -119,7 +119,7 @@ module.exports = {
   async getVendas (req, res){
     try{
       const venda = await Venda.find();
-      res.status(200).json({"data": {"status": "success", venda}});
+      res.status(200).json(venda);
     }catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Erro ao listar vendas.' });

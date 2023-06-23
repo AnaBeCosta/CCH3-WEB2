@@ -1,7 +1,12 @@
+import PessoasList from "../Pages/Pessoa/PessoaList";
+import { Link } from "react-router-dom";
+
 function Pessoas() {
     return(
         <div>
-            <h1>Pessoas</h1>
+            <br></br>
+            <button> <Link to="/cadastrarPessoa">Cadastrar pessoa</Link></button>
+            <PessoasList />
         </div>
     )
 }

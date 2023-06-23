@@ -16,6 +16,7 @@ module.exports = {
 
   //CADASTRAR PRODUTO
   async postProduto (req, res){
+    console.log(req);
     try{
       const { nome, categoria, descricao, quantidade } = req.body;
       const produto = new Produto({ nome, categoria, descricao, quantidade });
@@ -79,7 +80,7 @@ module.exports = {
   async getPessoas (req, res){
     try{
       const pessoa = await Pessoa.find();
-      res.status(200).json({"data": {"status": "success", pessoa}});
+      res.status(200).json(pessoa);
     }catch (error) {
       console.log(error);
       res.status(500).json({ error: 'Erro ao listar pessoas.' });

@@ -1,7 +1,9 @@
+import VendasList from "../Pages/Venda/VendasList";
+
 function Vendas() {
     return(
         <div>
-            <h1>Vendas</h1>
+            <VendasList />
         </div>
     )
 }

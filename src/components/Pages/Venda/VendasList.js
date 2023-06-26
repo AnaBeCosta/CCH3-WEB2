@@ -22,7 +22,7 @@ function VendasList() {
           <h1>Lista de Vendas</h1>
         </Col>
       </Row>
-      <Table striped bordered hover variant="dark" style={styles.table}>
+      <Table>
         <thead>
           <tr>
             <th>Data da Venda</th>
@@ -31,23 +31,31 @@ function VendasList() {
           </tr>
         </thead>
         <tbody>
-          {vendas.map((item, index) => (
-            <tr key={index}>
-              <td>{item.data_venda}</td>
+          {vendas.map((item, index) => {
+            const dateString = item.data_venda;
+            const data = new Date(dateString);
+            const ano = data.getFullYear();
+            const mes = (data.getMonth() + 1).toString().padStart(2, "0");
+            const dia = data.getDate().toString().padStart(2, "0");
+
+            const dataFormatada = `${dia}/${mes}/${ano}`;
+            return (<tr key={index}>
+              <td>{dataFormatada}</td>
               <td>{item.produto}</td>
               <td>{item.cliente}</td>
             </tr>
-          ))}
+            );
+          })}
         </tbody>
       </Table>
     </Container>
   );
 }
 
-  const styles = {
-    table: {
-      marginTop: 20,
-    },
-  };
+const styles = {
+  table: {
+    marginTop: 20,
+  },
+};
 
 export default VendasList;

@@ -36,7 +36,7 @@ const CadastroPessoa = ({ onPessoaCadastrada }) => {
     };
 
     return (
-        <Form className="col-sm-8">
+        <Form className="col-sm-8 card" style={{ backgroundColor: "white", border: '20px solid white'}}>
             <Form.Group class="row g-3">
                 <div class="col-md-6" controlId="nomePessoa">
                     <Form.Label>Nome</Form.Label>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Col, Row, Table } from 'react-bootstrap';
+import { Container, Col, Row, Table, Button } from 'react-bootstrap';
 
 function ProdutosList() {
   const [produtos, setProdutos] = useState([]);
@@ -16,13 +16,16 @@ function ProdutosList() {
   }, []);
 
   return (
-    <Container>
+    <Container class="container-sm" >
       <Row>
         <Col>
           <h1>Lista de Produtos</h1>
         </Col>
+        <Col style={{ textAlign: 'right', alignSelf: 'flex-end', marginBottom: '10px' }}>
+          <Button type="button" className="btn btn-dark btn-sm" href="/cadastrarProduto" > Cadastrar Produto </Button>
+        </Col>
       </Row>
-      <Table striped bordered hover variant="dark" style={styles.table}>
+      <Table striped bordered hover variant="dark">
         <thead>
           <tr>
             <th>Nome</th>
@@ -45,11 +48,5 @@ function ProdutosList() {
     </Container>
   );
 }
-
-  const styles = {
-    table: {
-      marginTop: 20,
-    },
-  };
 
 export default ProdutosList;

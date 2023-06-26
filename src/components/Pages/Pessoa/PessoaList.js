@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Col, Row, Table } from 'react-bootstrap';
+import { Container, Col, Row, Table, Button } from 'react-bootstrap';
 
 function PessoasList() {
   const [pessoas, setPessoas] = useState([]);
@@ -18,6 +18,9 @@ function PessoasList() {
       <Row>
         <Col>
           <h1>Lista de Pessoas</h1>
+        </Col>
+        <Col style={{ textAlign: 'right', alignSelf: 'flex-end', marginBottom: '10px' }}>
+          <Button type="button" className="btn btn-dark btn-sm" href="/cadastrarPessoa" > Cadastrar Pessoa </Button>
         </Col>
       </Row>
       <Table striped bordered hover variant="dark" style={styles.table}>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Container, Col, Row, Table } from 'react-bootstrap';
+import { Container, Col, Row, Table, Button } from 'react-bootstrap';
 
 function VendasList() {
   const [vendas, setVendas] = useState([]);
@@ -21,8 +21,11 @@ function VendasList() {
         <Col>
           <h1>Lista de Vendas</h1>
         </Col>
+        <Col style={{ textAlign: 'right', alignSelf: 'flex-end', marginBottom: '10px' }}>
+          <Button type="button" className="btn btn-dark btn-sm" href="/cadastrarVenda" > Cadastrar Venda </Button>
+        </Col>
       </Row>
-      <Table>
+      <Table striped bordered hover variant="dark">
         <thead>
           <tr>
             <th>Data da Venda</th>

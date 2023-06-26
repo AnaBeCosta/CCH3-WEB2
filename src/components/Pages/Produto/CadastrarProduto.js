@@ -32,51 +32,54 @@ const CadastroProduto = ({ onProdutoCadastrado }) => {
     };
 
     return (
-        <Form>
-            <Form.Group controlId="nomeProduto">
-                <Form.Label>Nome do produto</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Digite o nome do produto"
-                    value={nome}
-                    onChange={(e) => setNome(e.target.value)}
-                />
+        <Form className="col-sm-8">
+            <Form.Group class="row g-3">
+                <div class="col-md-6" controlId="nomeProduto">
+                    <Form.Label>Nome do produto</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite o nome do produto"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}/>
+                </div>
+
+                <div class="col-md-6" controlId="categoriaProduto">
+                    <Form.Label>Categoria</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite a categoria do produto"
+                        value={categoria}
+                        onChange={(e) => setCategoria(e.target.value)}
+                    />
+                </div>
+
+                <div class="col-md-6" controlId="descricaoProduto">
+                    <Form.Label>Descrição</Form.Label>
+                    <Form.Control
+                        as="textarea"
+                        rows={3}
+                        placeholder="Digite a descrição do produto"
+                        value={descricao}
+                        onChange={(e) => setDescricao(e.target.value)}
+                    />
+                </div>
+
+                <div class="col-md-4" controlId="quantidadeProduto">
+                    <Form.Label>Quantidade</Form.Label>
+                    <Form.Control
+                        type="number"
+                        placeholder="Digite a quantidade do produto"
+                        value={quantidade}
+                        onChange={(e) => setQuantidade(e.target.value)}
+                    />
+                </div>
             </Form.Group>
 
-            <Form.Group controlId="categoriaProduto">
-                <Form.Label>Categoria</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Digite a categoria do produto"
-                    value={categoria}
-                    onChange={(e) => setCategoria(e.target.value)}
-                />
-            </Form.Group>
+            <div style={{ marginTop: '40px'}}>
+                <Button type="submit" class="btn btn-primary " variant="primary" onClick={cadastrarProduto} style={{ marginRight: '10px'}}>Cadastrar</Button>
+                <Button type="button" class="btn btn-primary" href="/">Voltar</Button>
+            </div>
 
-            <Form.Group controlId="descricaoProduto">
-                <Form.Label>Descrição</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={3}
-                    placeholder="Digite a descrição do produto"
-                    value={descricao}
-                    onChange={(e) => setDescricao(e.target.value)}
-                />
-            </Form.Group>
-
-            <Form.Group controlId="quantidadeProduto">
-                <Form.Label>Quantidade</Form.Label>
-                <Form.Control
-                    type="number"
-                    placeholder="Digite a quantidade do produto"
-                    value={quantidade}
-                    onChange={(e) => setQuantidade(e.target.value)}
-                />
-            </Form.Group>
-
-            <Button variant="primary" onClick={cadastrarProduto}>
-                Cadastrar
-            </Button>
         </Form>
     );
 };

@@ -26,30 +26,33 @@ const CadastroVenda = ({ onVendaCadastrada }) => {
     };
 
     return (
-        <Form>
-            <Form.Group controlId="produto">
-                <Form.Label>Produto</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Digite o nome do produto"
-                    value={produto}
-                    onChange={(e) => setProduto(e.target.value)}
-                />
+        <Form className="col-sm-8">
+            <Form.Group class="row g-3" controlId="produto">
+                <div class="col-md-6"controlId="produto"> 
+                    <Form.Label>Produto</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite o nome do produto"
+                        value={produto}
+                        onChange={(e) => setProduto(e.target.value)}
+                    />
+                </div>
+
+                <div class="col-md-6" controlId="cliente">
+                    <Form.Label>Cliente</Form.Label>
+                    <Form.Control
+                        type="text"
+                        placeholder="Digite o nome do cliente"
+                        value={cliente}
+                        onChange={(e) => setCliente(e.target.value)}
+                    />
+                </div>
             </Form.Group>
 
-            <Form.Group controlId="cliente">
-                <Form.Label>Cliente</Form.Label>
-                <Form.Control
-                    type="text"
-                    placeholder="Digite o nome do cliente"
-                    value={cliente}
-                    onChange={(e) => setCliente(e.target.value)}
-                />
-            </Form.Group>
-
-            <Button variant="primary" onClick={cadastrarVenda}>
-                Cadastrar
-            </Button>
+            <div style={{ marginTop: '40px'}}>
+                <Button type="submit" class="btn btn-primary" variant="primary" onClick={cadastrarVenda} style={{ marginRight: '10px'}}>Cadastrar</Button>
+                <Button type="button" class="btn btn-primary" href="/vendas">Voltar</Button>
+            </div>
         </Form>
     );
 };

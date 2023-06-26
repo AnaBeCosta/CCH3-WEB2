@@ -43,14 +43,18 @@ const CadastroProduto = ({ onProdutoCadastrado }) => {
                         onChange={(e) => setNome(e.target.value)}/>
                 </div>
 
-                <div class="col-md-6" controlId="categoriaProduto">
+                <div className="col-md-6" controlId="categoriaProduto">
                     <Form.Label>Categoria</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Digite a categoria do produto"
+                    <Form.Select
                         value={categoria}
                         onChange={(e) => setCategoria(e.target.value)}
-                    />
+                    >
+                        <option value="">Selecione a categoria</option>
+                        <option value="Eletrônicos">Eletrônicos</option>
+                        <option value="Vestuário">Vestuário</option>
+                        <option value="Decoração">Decoração</option>
+                        <option value="Cosméticos">Cosméticos</option>
+                    </Form.Select>
                 </div>
 
                 <div class="col-md-6" controlId="descricaoProduto">

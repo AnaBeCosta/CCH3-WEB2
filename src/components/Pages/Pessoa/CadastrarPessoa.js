@@ -8,6 +8,7 @@ const CadastroPessoa = ({ onPessoaCadastrada }) => {
     const [cep, setCep] = useState('');
     const [logradouro, setLogradouro] = useState('');
     const [numero, setNumero] = useState('');
+    const [numeroInvalido, setNumeroInvalido] = useState(false);
 
     function onPessoaCadastrada(pessoa) {
         fetch('http://localhost:8081/cadastrarPessoa', {
@@ -34,6 +35,19 @@ const CadastroPessoa = ({ onPessoaCadastrada }) => {
         setLogradouro('');
         setNumero('');
     };
+
+    const handleNumeroChange = (e) => {
+        const value = e.target.value;
+    
+        // Verificar se o valor é um número
+        if (!isNaN(value)) {
+          setNumero(value);
+          setNumeroInvalido(false);
+        } else {
+          setNumero('');
+          setNumeroInvalido(true);
+        }
+      };
 
     return (
         <Form className="col-sm-8 card" style={{ backgroundColor: "white", border: '20px solid white'}}>
@@ -80,7 +94,9 @@ const CadastroPessoa = ({ onPessoaCadastrada }) => {
                         type="text"
                         placeholder="Digite o número"
                         value={numero}
-                        onChange={(e) => setNumero(e.target.value)}/>
+                        onChange={handleNumeroChange}
+                        isInvalid={numeroInvalido}/>
+                        {numeroInvalido && <Form.Control.Feedback type="invalid">Por favor, insira um número.</Form.Control.Feedback>}
                 </div>
             </Form.Group>
             

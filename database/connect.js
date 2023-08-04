@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURL = 'mongodb+srv://adm:123@projetos.yu7r5mm.mongodb.net/WEB2CCH3?retryWrites=true&w=majority';
+const dbURL = 'Insira aqui';
 
 
 async function connectToDatabase() {

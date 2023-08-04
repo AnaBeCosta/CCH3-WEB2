@@ -22,7 +22,11 @@ Este projeto consiste em um aplicativo web desenvolvido em React, que possui fun
 ![Cadastro](https://github.com/AnaBeCosta/CCH3-WEB2/assets/66637302/b51dbc6d-a4ec-4d39-87f5-cc5c82a359e4)
 
 
-### 👩‍💻 Desenvolvido por 
+### 🚀 Desenvolvimento
+
+Este projeto foi desenvolvido na disciplina de Programação para Web 2 e abrangeu os conhecimentos relacionados ao desenvolvimento de sistemas web. Foram interpretados os requisitos e apresentadas soluções criativas para o sistema. 
+
+#### 👩‍💻 Colaboradoras
 - Ana Beatriz Faria  | ✉️ anacost.a@outlook.com
 - Julia Stahl
 
